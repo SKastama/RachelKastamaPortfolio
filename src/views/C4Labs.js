@@ -4,7 +4,8 @@ import {
 } from "react-router-dom";
 import NavBar from './NavBar.js';
 import { Typography} from '@mui/material';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ReactPlayer from 'react-player';
+
 
 const C4Labs = () => {
     return (
@@ -80,6 +81,12 @@ const C4Labs = () => {
                     <p>
                         Clear Iris Dice Box prototype in motion.
                     </p>
+                    <ReactPlayer 
+                        url='../videos/20211110_134455.mp4'
+                        width='50%'
+                        controls = {true}
+                    />
+                    
                 </div>
                 <div>
                     <h1>Iris Mechanism Prototype 1</h1>
