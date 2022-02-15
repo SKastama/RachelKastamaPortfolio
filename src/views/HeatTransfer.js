@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     Link
 } from "react-router-dom";
@@ -8,8 +8,10 @@ const HeatTransfer = () => {
     return (
         <div>
             <NavBar/>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/SU Logo 2.png')} alt='suLogo'/>
             <h1>Heat Transfer</h1>
             <p>Fin Array Analysis</p>
+            <img style={{ height: '20em'}} src={require('../images/heatTransfer/HT P2 pic 3.png')} alt='hT1'/>
             <div>
                 <h1>Project Goal</h1>
                 <p>
@@ -28,6 +30,7 @@ const HeatTransfer = () => {
                 <span>pdf</span>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/heatTransfer/HT P2 rubric and figure 2.png')} alt='hT2'/>
                 <h1>Fin Array Analysis</h1>
                 <p>
                     The original design had the cylinder shaped copper 
@@ -43,8 +46,11 @@ const HeatTransfer = () => {
                 </p>
             </div>
             <h1>Project Overview</h1>
+            <img style={{ height: '20em'}} src={require('../images/heatTransfer/HT P2 rubric and figure 2.png')} alt='hT2'/>
             <h1>Table 1: Evaluated Values for Original Design</h1>
+            <img style={{ height: '20em'}} src={require('../images/heatTransfer/HT P2 table 1.png')} alt='hT3'/>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/heatTransfer/HT P2 table 2.png')} alt='hT4'/>
                 <h1>Table 2: Comparing the Original vs the Improved Design</h1>
                 <p>
                     Comparing the original fin design to the improved fin design.

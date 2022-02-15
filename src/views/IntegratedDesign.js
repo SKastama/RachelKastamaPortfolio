@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     Link
 } from "react-router-dom";
@@ -8,6 +8,7 @@ const IntegratedDesign = () => {
     return (
         <div>
             <NavBar/>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/SU Logo 2.png')} alt='suLogo'/>
             <h1>Integrated Design 3</h1>
             <p>UVC Disinfection Device Group Project</p>
             <div>

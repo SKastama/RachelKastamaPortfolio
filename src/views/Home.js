@@ -10,7 +10,7 @@ const Home = () => {
             <NavBar/>
             
             <div style={{display: 'flex', flexDirection: 'column'}}>
-                <img style={{ width: '30em'}} src={require('../images/20220103_142517.jpg')} alt='banner'/>
+                <img style={{ width: '30em'}} src={require('../images/c4Labs/iris.jpg')} alt='banner'/>
                 <div style={{display: 'flex', justifyContent: 'space-around'}}>
                     <Link to='/projects/c4_labs'>C4 Labs</Link>
                     <Link to='/projects/senior_project'>SU Senior Project</Link>

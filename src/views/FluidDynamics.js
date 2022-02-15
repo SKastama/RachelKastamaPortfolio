@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     Link
 } from "react-router-dom";
@@ -8,8 +8,10 @@ const FluidDynamics = () => {
     return (
         <div>
             <NavBar/>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/SU Logo 2.png')} alt='suLogo'/>
             <h1>Fluid Dynamics</h1>
             <p>Water Fountain Group Project</p>
+            <img style={{ height: '20em'}} src={require('../images/fluids/pic 5.png')} alt='fD1'/>
             <div>
                 <h1>Project Goal</h1>
                 <p>
@@ -22,6 +24,7 @@ const FluidDynamics = () => {
                 <span>pdf</span>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/fluids/Screenshot 2021-12-30 170917.png')} alt='fD2'/>
                 <h1>Water Fountain Project</h1>
                 <p>
                     Water fountain was created to have a trident-like 
@@ -34,8 +37,11 @@ const FluidDynamics = () => {
                 </p>
             </div>
             <h1>Diagram of Water Fountain</h1>
+            <img style={{ height: '20em'}} src={require('../images/fluids/Screenshot 2021-12-30 170917.png')} alt='fD2'/>
             <h1>Calculations 1</h1>
+            <img style={{ height: '20em'}} src={require('../images/fluids/Work 1.png')} alt='fD3'/>
             <h1>Calculations 2</h1>
+            <img style={{ height: '20em'}} src={require('../images/fluids/Work 2, 3, and 4.png')} alt='fD4'/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React  from 'react';
 import {
     Link
 } from "react-router-dom";
@@ -8,9 +8,12 @@ const SeniorProject = () => {
     return (
         <div>
             <NavBar/>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/SU Logo 2.png')} alt='suLogo'/>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/Picture8.png')} alt='SoundLogo'/>
             <h1>Senior Design Project</h1>
             <p>ME 21.7 Sound Transit</p>
             <p>Sound Transit Tension Weight Replacement Program</p>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/lightrail.jpg')} alt='Lightrail'/>
             <div>
                 <h1>Project Goal</h1>
                 <p>
@@ -26,6 +29,7 @@ const SeniorProject = () => {
                 <span>pdf</span>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/seniorProject/Spring Tensioning Device photo.png')} alt='springTension'/>
                 <h1>Mathematical Models</h1>
                 <p>
                     Created mathematical models of Sound Transit Light 
@@ -34,8 +38,10 @@ const SeniorProject = () => {
                     operational requirements.
                 </p>
             </div>
+            <img style={{ height: '20em'}} src={require('../images/seniorProject/Catenary system diagram.png')} alt='catenarySystem1'/>
             <h1>Catenary System with Two Tensorex</h1>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/seniorProject/Overhead wires modeling before and after.png')} alt='catenarySystem2'/>
                 <h1>Mathematical Modeling of Overhead Wires</h1>
                 <p>
                     Simplified free body diagram of the catenary system, 
@@ -44,6 +50,7 @@ const SeniorProject = () => {
                 </p>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/seniorProject/Screenshot 2022-01-03 193844.png')} alt='catenarySystem3'/>
                 <h1>Equations of Motion</h1>
                 <p>
                     The equations of motion for this system are the 
@@ -58,6 +65,7 @@ const SeniorProject = () => {
                 </p>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/seniorProject/Graph Equations.png')} alt='catenarySystem4'/>
                 <h1>Transfer Functions</h1>
                 <p>
                     Combining the equations of motion from the Tensorex 
@@ -74,6 +82,7 @@ const SeniorProject = () => {
                 </p>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/seniorProject/displacement graph.png')} alt='catenarySystem5'/>
                 <h1>Variable Radius of Rotation Graph</h1>
                 <p>
                     This is a graph showing rotation of our system with 
@@ -92,6 +101,7 @@ const SeniorProject = () => {
                 </p>
             </div>
             <div>
+                <img style={{ height: '20em'}} src={require('../images/seniorProject/force graph.png')} alt='catenarySystem6'/>
                 <h1>Variable Radius for Force</h1>
                 <p>
                     This is a graph showing the force of our system with 
