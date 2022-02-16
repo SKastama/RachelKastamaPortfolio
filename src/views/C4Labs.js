@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+const AutoPlaySwipeableViews = SwipeableViews;
 
 const images = [
     {
@@ -41,11 +41,11 @@ const images = [
         imgPath: require('../images/c4Labs/dice angled.jpg'),
         description: 'Created dice dividers to secure the dice, keep them organized, and to stop them from shuffling around. The dice dividers have a ramp-like design to help aid in separating the dice.'
     },
-    {
-        label: 'Iris Mechanism Prototype 1',
-        imgPath: require('../images/c4Labs/Iris Dice Bo First Prototype.png'),
-        description: 'First prototype of the iris mechanism for the Iris Dice Box.'
-    },
+    // {
+    //     label: 'Iris Mechanism Prototype 1',
+    //     imgPath: require('../images/c4Labs/Iris Dice Bo First Prototype.png'),
+    //     description: 'First prototype of the iris mechanism for the Iris Dice Box.'
+    // },
     {
         label: 'Prototype 1 and 2',
         imgPath: require('../images/c4Labs/prototypes 1 and 2.jpg'),
@@ -76,7 +76,15 @@ const C4Labs = () => {
             <div>
                 <Grid contianer sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '2em' }}>
                     <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <img style={{ height: '15em' }} src={require('../images/c4Labs/C4Labs Logo.png')} alt='c4Logo'/>
+                        <Box
+                            component='img'
+                            sx={{
+                            height: '15em',
+                            overflow: 'hidden'
+                            }}
+                            src={require('../images/c4Labs/C4Labs Logo.png')}
+                            alt='c4Logo'
+                        />
                     </Grid>
                     <Grid item xs={6}>
                         <Typography variant='h2'>C4Labs</Typography>
@@ -85,21 +93,29 @@ const C4Labs = () => {
                 </Grid>
                 <img style={{ width: '100%'}} src={require('../images/c4Labs/dice cropped.jpg')} alt='c41'/>
 
-                <div style={{ display: 'flex', flexDirection: 'row', margin: '4.5em' }}>
-                    <div>
-                        <img style={{ width: '25em'}} src={require('../images/c4Labs/iris.jpg')} alt='c42'/>
-                    </div>
-                    <div style={{padding: '2em', overflow: 'auto', overflowWrap: 'break-word'}}>
+                <Grid container sx={{ display: 'flex', flexDirection: 'row', margin: '4.5em'}}>
+                    <Grid item xs={6}>
+                        <Box
+                            component='img'
+                            sx={{
+                            width: '100%',
+                            overflow: 'hidden'
+                            }}
+                            src={require('../images/c4Labs/iris.jpg')}
+                            alt='c42'
+                        />
+                    </Grid>
+                    <Grid item xs={4} sx={{padding: '2em', overflow: 'auto', overflowWrap: 'break-word'}}>
                         <Typography variant='h2'>Iris Dice Box</Typography>
                         <br/>
-                        <Typography variant='h6'>
+                        <Typography variant='h7'>
                             Designed the Iris Dice Box for roleplaying games. 
                             Created a unique solution to attaching the iris 
                             mechanism to the container. Device is intuitive and 
                             easy to use with a smooth rotary motion.
                         </Typography>
-                    </div>
-                </div>
+                    </Grid>
+                </Grid>
                 <Box sx={{ width: 'auto', margin: '3em', border: 1}}>
                     <AutoPlaySwipeableViews
                         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -111,12 +127,12 @@ const C4Labs = () => {
                             <div key={step.label}>
                                 {Math.abs(activeStep - index) <= 2 ? (
                                 <Grid container sx={{ display: 'flex', padding: '2em'}}>
-                                    <Grid item xs={8} sx={{display: 'flex', justifyContent: 'center' }}>
+                                    <Grid item xs={7}>
                                         <Box
                                             component='img'
                                             sx={{
-                                            height: '30em',
-                                            overflow: 'hidden'
+                                            width: '100%',
+                                            overflow: 'hidden',
                                             }}
                                             src={step.imgPath}
                                             alt={step.label}
@@ -181,6 +197,7 @@ const C4Labs = () => {
                         </Typography>
                     </div>
                 </div>
+                
                 <h1>Final Version</h1>
                 <img style={{ height: '30em'}} src={require('../images/c4Labs/final.jpg')} alt='c411'/>
                 <h1>Final Version (with iris blades)</h1>
