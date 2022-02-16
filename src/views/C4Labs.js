@@ -3,8 +3,9 @@ import {
     Link
 } from "react-router-dom";
 import NavBar from './NavBar.js';
-import { Typography} from '@mui/material';
+import { Box, Grid, Typography} from '@mui/material';
 import ReactPlayer from 'react-player';
+import { minHeight } from '@mui/system';
 
 
 const C4Labs = () => {
@@ -12,20 +13,25 @@ const C4Labs = () => {
         <div>
             <NavBar/>
             <div>
-                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', margin: '2em'}}>
-                    <img style={{ height: '20em'}} src={require('../images/c4Labs/C4Labs Logo.png')} alt='c4Logo'/>
-                    <Typography variant='h2'>C4Labs</Typography>
-                    <Typography variant='h4'>Engineering Internship</Typography>
-                </div>
-                <img style={{ height: '30em', width: 'inherit'}} src={require('../images/c4Labs/dice cropped.jpg')} alt='c41'/>
-                <div sx={{ border: 1 }} style={{display: 'flex', flexDirection: 'row', margin: '3em'}}>
+                <Grid contianer sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '2em' }}>
+                    <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <img style={{ height: '15em' }} src={require('../images/c4Labs/C4Labs Logo.png')} alt='c4Logo'/>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography variant='h2'>C4Labs</Typography>
+                        <Typography variant='h4'>Engineering Internship</Typography>
+                    </Grid>
+                </Grid>
+                <img style={{ width: '100%'}} src={require('../images/c4Labs/dice cropped.jpg')} alt='c41'/>
+
+                <div style={{ display: 'flex', flexDirection: 'row', margin: '4.5em' }}>
                     <div>
-                        <img style={{ height: '30em'}} src={require('../images/c4Labs/iris.jpg')} alt='c42'/>
+                        <img style={{ width: '25em'}} src={require('../images/c4Labs/iris.jpg')} alt='c42'/>
                     </div>
-                    <div style={{padding: '2em'}}>
-                        <Typography variant='h3'>Iris Dice Box</Typography>
+                    <div style={{padding: '2em', overflow: 'auto', overflowWrap: 'break-word'}}>
+                        <Typography variant='h2'>Iris Dice Box</Typography>
                         <br/>
-                        <Typography variant='h7'>
+                        <Typography variant='h6'>
                             Designed the Iris Dice Box for roleplaying games. 
                             Created a unique solution to attaching the iris 
                             mechanism to the container. Device is intuitive and 

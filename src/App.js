@@ -12,12 +12,14 @@ import MachineElements from './views/MachineElements.js';
 import SeniorProject from './views/SeniorProject.js';
 import Resume from './views/Resume.js';
 import About from './views/About.js';
+import Projects from './views/Projects.js';
 
 function App() {
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/projects' element={<Projects/>}/>
         <Route path='/projects/c4_labs' element={<C4Labs/>}/>
         <Route path='/projects/senior_project' element={<SeniorProject/>}/>
         <Route path='/projects/integrated_design' element={<IntegratedDesign/>}/>
