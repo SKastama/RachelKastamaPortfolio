@@ -13,22 +13,44 @@ import SeniorProject from './views/SeniorProject.js';
 import Resume from './views/Resume.js';
 import About from './views/About.js';
 import Projects from './views/Projects.js';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme= createTheme({
+  palette: {
+    primary: {
+      main: '#00544a',
+      light: '#00695f',
+      dark: '#00695c'
+    },
+    typography: {
+      body1: {
+        color: '#fefefe'
+      },
+      h1: {
+        color: '#fefefe'
+      }
+    }
+  }
+})
+
 
 function App() {
   return (
     <div className='App'>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/projects' element={<Projects/>}/>
-        <Route path='/projects/c4_labs' element={<C4Labs/>}/>
-        <Route path='/projects/senior_project' element={<SeniorProject/>}/>
-        <Route path='/projects/integrated_design' element={<IntegratedDesign/>}/>
-        <Route path='/projects/machine_elements' element={<MachineElements/>}/>
-        <Route path='/projects/heat_transfer' element={<HeatTransfer/>}/>
-        <Route path='/projects/fluid_dynamics' element={<FluidDynamics/>}/>
-        <Route path='/resume' element={<Resume/>}/>
-        <Route path='/about' element={<About/>}/>
-      </Routes>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/projects' element={<Projects/>}/>
+          <Route path='/projects/c4_labs' element={<C4Labs/>}/>
+          <Route path='/projects/senior_project' element={<SeniorProject/>}/>
+          <Route path='/projects/integrated_design' element={<IntegratedDesign/>}/>
+          <Route path='/projects/machine_elements' element={<MachineElements/>}/>
+          <Route path='/projects/heat_transfer' element={<HeatTransfer/>}/>
+          <Route path='/projects/fluid_dynamics' element={<FluidDynamics/>}/>
+          <Route path='/resume' element={<Resume/>}/>
+          <Route path='/about' element={<About/>}/>
+        </Routes>
+      </ThemeProvider>
     </div>
   );
 }

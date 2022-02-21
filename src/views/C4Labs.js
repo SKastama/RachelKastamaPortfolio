@@ -3,13 +3,11 @@ import {
     Link
 } from "react-router-dom";
 import NavBar from './NavBar.js';
-import { Box, Grid, Typography} from '@mui/material';
+import { Box, Button, Container, Grid, Paper, Typography} from '@mui/material';
 import ReactPlayer from 'react-player';
 import { minHeight } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
 import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
@@ -71,9 +69,9 @@ const C4Labs = () => {
         setActiveStep(step);
     };
     return (
-        <div>
+        <Box bgcolor='primary.light'>
             <NavBar/>
-            <div>
+            <Box>
                 <Grid contianer sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '2em' }}>
                     <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'center' }}>
                         <Box
@@ -248,8 +246,8 @@ const C4Labs = () => {
                     </p>
                     <img style={{ height: '30em'}} src={require('../images/c4Labs/Iris Dice Box Assembly Jig First Prototype.png')} alt='c416'/>
                 </div>
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 }
 export default C4Labs;
