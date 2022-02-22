@@ -55,7 +55,7 @@ const C4Labs = () => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
     const [showText, setShowText] = useState(false);
-    const maxSteps = images.length;
+    const maxSteps = images.length + 1;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -100,7 +100,7 @@ const C4Labs = () => {
                 </Grid>
                 <img style={{ width: '100%'}} src={require('../images/c4Labs/dice cropped.jpg')} alt='c41'/>
 
-                <Box sx={{ margin: '3em', minWidth: 950}}>
+                <Box sx={{ margin: '3em', minWidth: 1010}}>
                     <Grid container sx={{padding: '2em'}}>
                         <Grid item xs={6}>
                             <Box
@@ -130,7 +130,7 @@ const C4Labs = () => {
                     </Grid>
                 </Box>
                 
-                <Box sx={{ width: 'auto', margin: '3em', border: 1}}>
+                <Box sx={{ margin: '5em', minWidth: 950}} bgcolor='primary.main'>
                     <AutoPlaySwipeableViews
                         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                         index={activeStep}
@@ -140,7 +140,7 @@ const C4Labs = () => {
                         {images.map((step, index) => (
                             <div key={step.label}>
                                 {Math.abs(activeStep - index) <= 2 ? (
-                                <Box sx={{ display: 'flex', justifyContent: 'center', padding: '2em'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                <Box sx={{ marginX: '7em', display: 'flex', justifyContent: 'center'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                     <Box
                                         component='img'
                                         sx={{
@@ -155,7 +155,6 @@ const C4Labs = () => {
                                     {showText && <Box sx={{position: 'absolute', top: 210 }}>
                                         <Box sx={{width: '40em', lineHeight: 2, maxHeight: '43em'}}>
                                             <Typography variant='h5' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.label}</Typography>
-                                            
                                             <Typography variant='subtitle1' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.description}</Typography>
                                         </Box>
                                     </Box>}
@@ -163,6 +162,18 @@ const C4Labs = () => {
                                 ) : null}
                             </div>
                         ))}
+                        <Box sx={{ marginX: '7em', display: 'flex', justifyContent: 'center', height: '100%'}} bgcolor='common.black'>
+                            <ReactPlayer 
+                                url='../videos/20211110_134455.mp4'
+                                width= '100%'
+                                height= '33.59em'
+                                loop={true}
+                                volume= {null}
+                                muted= {true}
+                                controls= {true}
+                                playIcon
+                            />
+                        </Box>
                     </AutoPlaySwipeableViews>
                     <MobileStepper
                         steps={maxSteps}
@@ -183,18 +194,6 @@ const C4Labs = () => {
                         }
                     />
                 </Box>
-                
-                <div>
-                    <h1>Iris Dice Box in Motion</h1>
-                    <p>
-                        Clear Iris Dice Box prototype in motion.
-                    </p>
-                    <ReactPlayer 
-                        url='../videos/20211110_134455.mp4'
-                        width='50%'
-                        controls = {true}
-                    />
-                </div>
 
                 <img style={{ width: '100%'}} src={require('../images/c4Labs/20220106_135356_edited1.jpg')} alt='c49'/>
 
