@@ -142,13 +142,14 @@ const C4Labs = () => {
                                             }}
                                             src={step.imgPath}
                                             alt={step.label}
+                                            onMouseEnter={handleMouseEnter}
                                         />
                                     </Grid>
-                                    <Grid item xs={5} padding={2}>
+                                    {/* <Grid item xs={5} padding={2}>
                                         <Typography variant='h3'>{step.label}</Typography>
                                         <br/>
                                         <Typography variant='h6'>{step.description}</Typography>
-                                    </Grid>
+                                    </Grid> */}
                                 </Grid>
                                 ) : null}
                             </div>
@@ -184,25 +185,39 @@ const C4Labs = () => {
                         width='50%'
                         controls = {true}
                     />
-                    
                 </div>
-                
-                <hr/>
-                <img style={{ height: '30em'}} src={require('../images/c4Labs/20220106_135356_edited.jpg')} alt='c49'/>
-                <div style={{display: 'flex', flexDirection: 'row', margin: '3em'}}>
-                    <div>
-                        <img style={{ height: '30em'}} src={require('../images/c4Labs/20220106_135356.jpg')} alt='c410'/>
-                    </div>
-                    <div style={{padding: '2em'}}>
-                        <Typography variant='h3'>Assembly Jig</Typography>
-                        <Typography variant='h7'>
-                            Simplified and stream-lined production by developing an 
-                            assembly jig. This reduced manufacturing errors by 
-                            standardizing tolerances, creating fixed positions, and 
-                            locking parts into place during the gluing process.
-                        </Typography>
-                    </div>
-                </div>
+
+                <img style={{ width: '100%'}} src={require('../images/c4Labs/20220106_135356_edited1.jpg')} alt='c49'/>
+
+                <Box sx={{ margin: '3em', minWidth: 950}}>
+                    <Grid container sx={{padding: '2em'}}>
+                        <Grid item xs={6}>
+                            <Box
+                                component='img'
+                                sx={{
+                                width: '100%',
+                                height: '100%',
+                                overflow: 'hidden',
+                                minWidth: 400
+                                }}
+                                src={require('../images/c4Labs/20220106_135356.jpg')}
+                                alt='c42'
+                            />
+                        </Grid>
+                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '6em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <Box sx={{width: '20em', lineHeight: 2, maxHeight: '43em'}}>
+                                <Typography variant='h2' color='primary.light'>Assembly Jig</Typography>
+                                <br/>
+                                <Typography variant='h7' color='primary.light'>
+                                    Simplified and stream-lined production by developing an 
+                                    assembly jig. This reduced manufacturing errors by 
+                                    standardizing tolerances, creating fixed positions, and 
+                                    locking parts into place during the gluing process.
+                                </Typography>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Box>
                 
                 <h1>Final Version</h1>
                 <img style={{ height: '30em'}} src={require('../images/c4Labs/final.jpg')} alt='c411'/>
