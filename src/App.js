@@ -21,15 +21,12 @@ const theme= createTheme({
       main: '#00544a',
       light: '#00695f',
       dark: '#00695c'
-    },
-    typography: {
-      body1: {
-        color: '#fefefe'
-      },
-      h1: {
-        color: '#fefefe'
-      }
     }
+  },
+  typography: {
+    fontFamily: 'Lato',
+    fontWeightRegular: 300,
+    fontSize: 18
   }
 })
 
