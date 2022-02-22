@@ -142,7 +142,7 @@ const C4Labs = () => {
                                             }}
                                             src={step.imgPath}
                                             alt={step.label}
-                                            onMouseEnter={handleMouseEnter}
+                                            // onMouseEnter={handleMouseEnter}
                                         />
                                     </Grid>
                                     {/* <Grid item xs={5} padding={2}>
