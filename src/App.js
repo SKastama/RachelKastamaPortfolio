@@ -26,6 +26,7 @@ const theme= createTheme({
   typography: {
     fontFamily: 'Lato',
     fontWeightRegular: 300,
+    fontWeightMedium: 400,
     fontSize: 18
   }
 })

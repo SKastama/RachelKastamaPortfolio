@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
     Link
 } from "react-router-dom";
@@ -51,10 +51,10 @@ const images = [
     }
 ];
 
-
 const C4Labs = () => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
+    const [showText, setShowText] = useState(false);
     const maxSteps = images.length;
 
     const handleNext = () => {
@@ -68,6 +68,14 @@ const C4Labs = () => {
     const handleStepChange = (step) => {
         setActiveStep(step);
     };
+
+    const handleMouseEnter = e => {
+        setShowText(true)
+    }
+    const handleMouseLeave = e => {
+        setShowText(false)
+    }
+
     return (
         <Box bgcolor='primary.light'>
             <NavBar/>
@@ -132,25 +140,26 @@ const C4Labs = () => {
                         {images.map((step, index) => (
                             <div key={step.label}>
                                 {Math.abs(activeStep - index) <= 2 ? (
-                                <Grid container sx={{ display: 'flex', padding: '2em'}}>
-                                    <Grid item xs={7}>
-                                        <Box
-                                            component='img'
-                                            sx={{
-                                            width: '100%',
-                                            overflow: 'hidden',
-                                            }}
-                                            src={step.imgPath}
-                                            alt={step.label}
-                                            // onMouseEnter={handleMouseEnter}
-                                        />
-                                    </Grid>
-                                    {/* <Grid item xs={5} padding={2}>
-                                        <Typography variant='h3'>{step.label}</Typography>
-                                        <br/>
-                                        <Typography variant='h6'>{step.description}</Typography>
-                                    </Grid> */}
-                                </Grid>
+                                <Box sx={{ display: 'flex', justifyContent: 'center', padding: '2em'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                    <Box
+                                        component='img'
+                                        sx={{
+                                        width: '45em',
+                                        overflow: 'hidden',
+                                        backgroundColor: showText ? 'primary.light': false, 
+                                        opacity: showText ? [0.5, 0.4, 0.4] : false
+                                        }}
+                                        src={step.imgPath}
+                                        alt={step.label}
+                                    />
+                                    {showText && <Box sx={{position: 'absolute', top: 210 }}>
+                                        <Box sx={{width: '40em', lineHeight: 2, maxHeight: '43em'}}>
+                                            <Typography variant='h5' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.label}</Typography>
+                                            
+                                            <Typography variant='subtitle1' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.description}</Typography>
+                                        </Box>
+                                    </Box>}
+                                </Box>
                                 ) : null}
                             </div>
                         ))}
