@@ -123,7 +123,7 @@ const C4Labs = () => {
     }
 
     return (
-        <Box bgcolor='primary.light' sx={{minWidth: 1000}}>
+        <Box bgcolor='primary.light' sx={{minWidth: 925}}>
             <NavBar/>
             <Box sx={{ paddingBottom: '5em'}}>
                 <Grid contianer sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '2em' }}>
