@@ -123,7 +123,7 @@ const C4Labs = () => {
     }
 
     return (
-        <Box bgcolor='primary.light'>
+        <Box bgcolor='primary.light' sx={{minWidth: 1000}}>
             <NavBar/>
             <Box sx={{ paddingBottom: '5em'}}>
                 <Grid contianer sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '2em' }}>
@@ -161,7 +161,7 @@ const C4Labs = () => {
                                 alt='c42'
                             />
                         </Grid>
-                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '6em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '6em', paddingX: '2em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <Box sx={{width: '20em', lineHeight: 2, maxHeight: '43em'}}>
                                 <Typography variant='h2' color='primary.light'>Iris Dice Box</Typography>
                                 <br/>
@@ -257,7 +257,7 @@ const C4Labs = () => {
                                 alt='c42'
                             />
                         </Grid>
-                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '6em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '6em', paddingX: '3em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <Box sx={{width: '20em', lineHeight: 2, maxHeight: '43em'}}>
                                 <Typography variant='h2' color='primary.light'>Assembly Jig</Typography>
                                 <br/>
