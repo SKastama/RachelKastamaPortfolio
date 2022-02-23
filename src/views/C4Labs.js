@@ -51,11 +51,46 @@ const images = [
     }
 ];
 
+const images2 = [
+    {
+        label: 'Final Version',
+        imgPath: require('../images/c4Labs/final.jpg'),
+        description: ''
+    },
+    {
+        label: 'Final Version (with iris blades)',
+        imgPath: require('../images/c4Labs/finalWBlades.jpg'),
+        description: ''
+    },
+    {
+        label: 'Top View (with iris blades)',
+        imgPath: require('../images/c4Labs/assemblyTopWBlades.jpg'),
+        description: 'The circle outlines on the assembly jig showcase where the part will be glued onto the iris blade (red). The location glued changes depending on which side of the iris blade (red) the part is being attached, with the white side being where the top of the iris blade is glued, and the green side being where the bottom is glued. The two sides of the assembly jig are different colors to help aid those involved in manufacturing from being confused.'
+    },
+    {
+        label: 'Top View',
+        imgPath: require('../images/c4Labs/assemblyTop.jpg'),
+        description: 'The circle outlines seen in the photo (above the pistons) aids in positioning the pistons accurately, as the smaller circle outline is the same size as the part being glued.'
+    },
+    {
+        label: 'Assembly Jig Process',
+        imgPath: require('../images/c4Labs/Assembly Jig process.png'),
+        description: 'From top to bottom: \n1. Part is placed in lowered piston. Drop of glue is placed on the part. \n2. Piston is raised to glue part to iris blade (red). Pressure from the piston holds the part and iris blade (red) in place. \n3. Piston is lowered after 30 seconds when the glue is dry.'
+    },
+    {
+        label: 'Assembly Jig Initial Concept',
+        imgPath: require('../images/c4Labs/Iris Dice Box Assembly Jig First Prototype.png'),
+        description: 'First prototype of the part that holds and aligns the iris blade in the correct location while being glued.'
+    }
+]
+
 const C4Labs = () => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep2, setActiveStep2] = React.useState(0);
     const [showText, setShowText] = useState(false);
     const maxSteps = images.length + 1;
+    const maxSteps2= images2.length;
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -68,6 +103,17 @@ const C4Labs = () => {
     const handleStepChange = (step) => {
         setActiveStep(step);
     };
+    
+    const handleNext2 = () => {
+        setActiveStep2((prevActiveStep) => prevActiveStep + 1);
+    };
+
+    const handleBack2 = () => {
+        setActiveStep2((prevActiveStep) => prevActiveStep - 1);
+    };
+    const handleStepChange2 = (step) => {
+        setActiveStep2(step);
+    };
 
     const handleMouseEnter = e => {
         setShowText(true)
@@ -79,7 +125,7 @@ const C4Labs = () => {
     return (
         <Box bgcolor='primary.light'>
             <NavBar/>
-            <Box>
+            <Box sx={{ paddingBottom: '5em'}}>
                 <Grid contianer sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', margin: '2em' }}>
                     <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'center' }}>
                         <Box
@@ -100,7 +146,7 @@ const C4Labs = () => {
                 </Grid>
                 <img style={{ width: '100%'}} src={require('../images/c4Labs/dice cropped.jpg')} alt='c41'/>
 
-                <Box sx={{ margin: '3em', minWidth: 1010}}>
+                <Box sx={{ margin: '3em'}}>
                     <Grid container sx={{padding: '2em'}}>
                         <Grid item xs={6}>
                             <Box
@@ -109,7 +155,7 @@ const C4Labs = () => {
                                 width: '100%',
                                 height: '100%',
                                 overflow: 'hidden',
-                                minWidth: 400
+                                minWidth: '30em'
                                 }}
                                 src={require('../images/c4Labs/iris copy.jpg')}
                                 alt='c42'
@@ -130,7 +176,7 @@ const C4Labs = () => {
                     </Grid>
                 </Box>
                 
-                <Box sx={{ margin: '5em', minWidth: 950}} bgcolor='primary.main'>
+                <Box sx={{ margin: '5em'}} bgcolor='primary.main'>
                     <AutoPlaySwipeableViews
                         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                         index={activeStep}
@@ -145,6 +191,7 @@ const C4Labs = () => {
                                         component='img'
                                         sx={{
                                         width: '45em',
+                                        minWidth: '45em',
                                         overflow: 'hidden',
                                         backgroundColor: showText ? 'primary.light': false, 
                                         opacity: showText ? [0.5, 0.4, 0.4] : false
@@ -194,10 +241,8 @@ const C4Labs = () => {
                         }
                     />
                 </Box>
-
                 <img style={{ width: '100%'}} src={require('../images/c4Labs/20220106_135356_edited1.jpg')} alt='c49'/>
-
-                <Box sx={{ margin: '3em', minWidth: 950}}>
+                <Box sx={{ margin: '3em'}}>
                     <Grid container sx={{padding: '2em'}}>
                         <Grid item xs={6}>
                             <Box
@@ -206,7 +251,7 @@ const C4Labs = () => {
                                 width: '100%',
                                 height: '100%',
                                 overflow: 'hidden',
-                                minWidth: 400
+                                minWidth: '30em'
                                 }}
                                 src={require('../images/c4Labs/20220106_135356.jpg')}
                                 alt='c42'
@@ -226,57 +271,59 @@ const C4Labs = () => {
                         </Grid>
                     </Grid>
                 </Box>
-                
-                <h1>Final Version</h1>
-                <img style={{ height: '30em'}} src={require('../images/c4Labs/final.jpg')} alt='c411'/>
-                <h1>Final Version (with iris blades)</h1>
-                <img style={{ height: '30em'}} src={require('../images/c4Labs/finalWBlades.jpg')} alt='c412'/>
-                <div>
-                    <h1>Top View (with iris blades)</h1>
-                    <p>
-                        The circle outlines on the assembly jig showcase where 
-                        the part will be glued onto the iris blade (red). The 
-                        location glued changes depending on which side of the 
-                        iris blade (red) the part is being attached, with the 
-                        white side being where the top of the iris blade is 
-                        glued, and the green side being where the bottom is 
-                        glued. The two sides of the assembly jig are different 
-                        colors to help aid those involved in manufacturing from 
-                        being confused.
-                    </p>
-                    <img style={{ height: '30em'}} src={require('../images/c4Labs/assemblyTopWBlades.jpg')} alt='c413'/>
-                </div>
-                <div>
-                    <h1>Top View</h1>
-                    <p>
-                        The circle outlines seen in the photo (above the 
-                        pistons) aids in positioning the pistons accurately, 
-                        as the smaller circle outline is the same size as the 
-                        part being glued.
-                    </p>
-                    <img style={{ height: '30em'}} src={require('../images/c4Labs/assemblyTop.jpg')} alt='c414'/>
-                </div>
-                <div>
-                    <h1>Assembly Jig Process</h1>
-                    <p>
-                        From top to bottom:
-                        1. Part is placed in lowered piston. Drop of glue is 
-                        placed on the part.
-                        2. Piston is raised to glue part to iris blade (red). 
-                        Pressure from the piston holds the part and iris 
-                        blade (red) in place. 3. Piston is lowered after 30 
-                        seconds when the glue is dry.
-                    </p>
-                    <img style={{ height: '30em'}} src={require('../images/c4Labs/Assembly Jig process.png')} alt='c415'/>
-                </div>
-                <div>
-                    <h1>Assembly Jig Initial Concept</h1>
-                    <p>
-                        First prototype of the part that holds and aligns the 
-                        iris blade in the correct location while being glued.
-                    </p>
-                    <img style={{ height: '30em'}} src={require('../images/c4Labs/Iris Dice Box Assembly Jig First Prototype.png')} alt='c416'/>
-                </div>
+                <Box sx={{ marginX: '5em'}} bgcolor='primary.main'>
+                    <AutoPlaySwipeableViews
+                        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                        index={activeStep2}
+                        onChangeIndex={handleStepChange2}
+                        enableMouseEvents
+                    >
+                        {images2.map((step, index) => (
+                            <div key={step.label}>
+                                {Math.abs(activeStep2 - index) <= 2 ? (
+                                <Box sx={{ marginX: '7em', display: 'flex', justifyContent: 'center'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                    <Box
+                                        component='img'
+                                        sx={{
+                                        height: '35em',
+                                        minHeight: '35em',
+                                        overflow: 'hidden',
+                                        backgroundColor: showText ? 'primary.light': false, 
+                                        opacity: showText ? [0.5, 0.4, 0.4] : false
+                                        }}
+                                        src={step.imgPath}
+                                        alt={step.label}
+                                    />
+                                    {showText && <Box sx={{position: 'absolute', top: 210 }}>
+                                        <Box sx={{width: '40em', lineHeight: 2, maxHeight: '43em'}}>
+                                            <Typography variant='h5' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.label}</Typography>
+                                            <Typography variant='subtitle1' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.description}</Typography>
+                                        </Box>
+                                    </Box>}
+                                </Box>
+                                ) : null}
+                            </div>
+                        ))}
+                    </AutoPlaySwipeableViews>
+                    <MobileStepper
+                        steps={maxSteps2}
+                        position="static"
+                        activeStep={activeStep2}
+                        nextButton={
+                            <Button
+                                size="small"
+                                onClick={handleNext2}
+                                disabled={activeStep2 === maxSteps2 - 1}>
+                                Next
+                            </Button>
+                        }
+                        backButton={
+                            <Button size="small" onClick={handleBack2} disabled={activeStep2 === 0}>
+                                Back
+                            </Button>
+                        }
+                    />
+                </Box>
             </Box>
         </Box>
     )
