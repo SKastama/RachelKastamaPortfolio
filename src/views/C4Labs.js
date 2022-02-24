@@ -86,8 +86,8 @@ const images2 = [
 
 const C4Labs = () => {
     const theme = useTheme();
-    const [activeStep, setActiveStep] = React.useState(0);
-    const [activeStep2, setActiveStep2] = React.useState(0);
+    const [activeStep, setActiveStep] = useState(0);
+    const [activeStep2, setActiveStep2] = useState(0);
     const [showText, setShowText] = useState(false);
     const maxSteps = images.length + 1;
     const maxSteps2= images2.length;

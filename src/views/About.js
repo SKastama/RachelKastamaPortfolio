@@ -21,12 +21,12 @@ const About = () => {
                             alt='aboutPhoto'
                         />
                     </Grid>
-                    <Grid item xs={6} bgcolor='#fefefe' sx={{padding: '3em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <Box sx={{width: '20em', lineHeight: 2, maxHeight: '43em'}}>
+                    <Grid item xs={6} bgcolor='#fefefe' sx={{padding: '2em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Box sx={{width: '20em', lineHeight: 2, maxHeight: '40em'}}>
                             <Typography variant='h5'>Rachel Kastama</Typography>
                             <Typography variant='body1' color='primary.main'>Mechanical Engineer</Typography>
                             <br/>
-                            <Typography fontSize={16}>
+                            <Typography fontSize={15}>
                                 I grew up in Puyallup Washington. I am a recent college 
                                 graduate from Seattle University. At Seattle University, 
                                 I obtained a Mechanical Engineering degree and a minor in 
