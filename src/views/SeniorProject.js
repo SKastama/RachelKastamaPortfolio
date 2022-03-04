@@ -11,11 +11,6 @@ const AutoPlaySwipeableViews = SwipeableViews;
 
 const images = [
     {
-        label: 'Mathematical Models',
-        imgPath: require('../images/seniorProject/Spring Tensioning Device photo.png'),
-        description: 'Created mathematical models of Sound Transit Light Rail catenary system that constructed a monitoring program to ensure the spring tensioning device met operational requirements.'
-    },
-    {
         label: 'Catenary System with Two Tensorex',
         imgPath: require('../images/seniorProject/Catenary system diagram.png'),
         description: ''
@@ -125,7 +120,7 @@ const SeniorProject = () => {
                                     system.
                                 </Typography>
                             </Box>
-                            <Button variant='contained' sx={{ backgroundColor: 'secondary.main', color: 'primary.main', fontSize: 14, textTransform: 'none', width: '25em', marginBottom: '1em'}}>
+                            <Button variant='outlined' sx={{ border: 1, color: 'secondary.main', fontSize: 14, textTransform: 'none', width: '25em', marginBottom: '1em'}}>
                                 ME 21.7 Sound Transit Project Day Presentation pdf
                             </Button>
                             <Button variant='outlined' sx={{ border: 1, color: 'secondary.main', fontSize: 14, textTransform: 'none', width: '25em'}}>
@@ -149,9 +144,9 @@ const SeniorProject = () => {
                                 alt='springTension'
                             />
                         </Grid>
-                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '6em', paddingX: '2em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Grid item xs={6} bgcolor='#fefefe' sx={{paddingY: '4em', paddingX: '2em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <Box sx={{width: '20em', lineHeight: 2, maxHeight: '43em'}}>
-                                <Typography variant='h2' color='primary.light'>Mathematical Models</Typography>
+                                <Typography variant='h4' color='primary.light'>Mathematical Models</Typography>
                                 <br/>
                                 <Typography variant='h7' color='primary.light'>
                                     Created mathematical models of Sound Transit Light 
@@ -172,43 +167,32 @@ const SeniorProject = () => {
                         enableMouseEvents
                     >
                         {images.map((step, index) => (
-                            <div key={step.label}>
+                            <Box key={step.label} sx={{height: '100%'}} >
                                 {Math.abs(activeStep - index) <= 2 ? (
-                                <Box sx={{ marginX: '7em', display: 'flex', justifyContent: 'center'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                    <Box
-                                        component='img'
-                                        sx={{
-                                        width: '45em',
-                                        minWidth: '45em',
-                                        overflow: 'hidden',
-                                        backgroundColor: showText ? 'primary.light': false, 
-                                        opacity: showText ? [0.5, 0.4, 0.4] : false
-                                        }}
-                                        src={step.imgPath}
-                                        alt={step.label}
-                                    />
-                                    {showText && <Box sx={{position: 'absolute', top: 210 }}>
+                                <Box sx={{ marginX: '6em', display: 'flex', justifyContent: 'center'}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                    <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+                                        <Box
+                                            component='img'
+                                            sx={{
+                                            height: '27em',
+                                            overflow: 'hidden',
+                                            backgroundColor: showText ? 'primary.light': false, 
+                                            opacity: showText ? [0.5, 0.4, 0.4] : false
+                                            }}
+                                            src={step.imgPath}
+                                            alt={step.label}
+                                        />
+                                    </Box>
+                                    {showText && <Box sx={{position: 'absolute', top: 65 }}>
                                         <Box sx={{width: '40em', lineHeight: 2, maxHeight: '43em'}}>
-                                            <Typography variant='h5' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.label}</Typography>
-                                            <Typography variant='subtitle1' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.description}</Typography>
+                                            <Typography variant='h5' color='common.white' align='center' fontWeight='fontWeightMedium' sx={{marginBottom: '0.5em'}}>{step.label}</Typography>
+                                            <Typography variant='body1' color='common.white' align='center' fontWeight='fontWeightMedium'>{step.description}</Typography>
                                         </Box>
                                     </Box>}
                                 </Box>
                                 ) : null}
-                            </div>
+                            </Box>
                         ))}
-                        <Box sx={{ marginX: '7em', display: 'flex', justifyContent: 'center', height: '100%'}} bgcolor='common.black'>
-                            <ReactPlayer 
-                                url='../videos/20211110_134455.mp4'
-                                width= '100%'
-                                height= '33.59em'
-                                loop={true}
-                                volume= {null}
-                                muted= {true}
-                                controls= {true}
-                                playIcon
-                            />
-                        </Box>
                     </AutoPlaySwipeableViews>
                     <MobileStepper
                         steps={maxSteps}
