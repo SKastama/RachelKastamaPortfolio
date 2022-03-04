@@ -107,20 +107,33 @@ const SeniorProject = () => {
                     </Grid>
                 </Grid>
                 <img style={{ width: '100%'}} src={require('../images/seniorProject/lightrail.jpg')} alt='Lightrail'/>
-                <div>
-                    <h1>Project Goal</h1>
-                    <p>
-                        Member of Seattle University senior project design team 
-                        for Sound Transit Light Rail’s catenary system. Replaced 
-                        the Light Rail’s current counterweight system with a 
-                        spring tensioning device. Developed monitoring program to 
-                        ensure spring tensioning device meets operational 
-                        requirements. Created mathematical models of the catenary 
-                        system.
-                    </p>
-                    <span>pdf</span>
-                    <span>pdf</span>
-                </div>
+                
+                <Box sx={{ marginX: '2em', marginY: '1em'}}>
+                    <Grid container sx={{padding: '2em'}}>
+                        <Grid item xs={6} sx={{padding: '1em'}}>
+                            <Typography variant='h3' color='common.white' align='center'>Project Goal</Typography>
+                        </Grid>
+                        <Grid item xs={6} sx={{padding: '1em'}}>
+                            <Box sx={{maxHeight: '43em', marginBottom: '2.5em'}}>
+                                <Typography variant='body1' color='common.white' fontWeight='fontWeightMedium' fontSize={15} lineHeight={1.8}>
+                                    Member of Seattle University senior project design team 
+                                    for Sound Transit Light Rail’s catenary system. Replaced 
+                                    the Light Rail’s current counterweight system with a 
+                                    spring tensioning device. Developed monitoring program to 
+                                    ensure spring tensioning device meets operational 
+                                    requirements. Created mathematical models of the catenary 
+                                    system.
+                                </Typography>
+                            </Box>
+                            <Button variant='contained' sx={{ backgroundColor: 'secondary.main', color: 'primary.main', fontSize: 14, textTransform: 'none', width: '25em', marginBottom: '1em'}}>
+                                ME 21.7 Sound Transit Project Day Presentation pdf
+                            </Button>
+                            <Button variant='outlined' sx={{ border: 1, color: 'secondary.main', fontSize: 14, textTransform: 'none', width: '25em'}}>
+                                ME 21.7 Sound Transit Project Abstract pdf
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Box>
                 <Box sx={{ margin: '3em'}}>
                     <Grid container sx={{padding: '2em'}}>
                         <Grid item xs={6}>
